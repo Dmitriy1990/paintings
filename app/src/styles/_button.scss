@@ -1,0 +1,31 @@
+.button {
+  appearance: none;
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background: var(--color-text-secondary);
+  color: #fff;
+  padding: 10px 9px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 150%;
+  text-transform: none;
+  text-decoration: none;
+  cursor: pointer;
+  min-width: 118px;
+  min-height: 48px;
+  transition: 0.3s ease-out;
+  font-family: 'Merriweather', serif;
+  &:hover,
+  &:focus {
+    outline: none;
+    background: var(--color-accent);
+  }
+  &:disabled {
+    background: var(--color-accent-light);
+    cursor: not-allowed;
+    border: none;
+  }
+}

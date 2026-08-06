@@ -1,0 +1,133 @@
+.product {
+  min-width: 280px;
+  border: 1px solid #e7e7e7;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+
+  flex: 1;
+
+  &__img {
+    height: 159px;
+    width: 100%;
+    position: relative;
+    display: block;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    overflow: hidden;
+    &:hover img {
+      transform: scale(1.03);
+    }
+    img {
+      transition: transform 0.3s ease;
+    }
+  }
+
+  &__trigger {
+    appearance: none;
+    text-align: left;
+    color: inherit;
+  }
+
+  &__title {
+    margin: 0 0 20px;
+
+    &-btn {
+      display: inline;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      width: 100%;
+      text-align: left;
+      font: inherit;
+      color: inherit;
+      transition: color 0.2s ease;
+
+      &:hover,
+      &:focus {
+        color: var(--color-accent);
+        outline: none;
+      }
+    }
+  }
+
+  &__inner {
+    padding: 20px 24px 24px;
+    border-top: 1px solid #e7e7e7;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__sold {
+    margin-bottom: 10px;
+  }
+
+  &-price {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+
+    &__old {
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 150%;
+      text-decoration-line: line-through;
+      color: var(--color-border-dark);
+    }
+
+    &__new {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 150%;
+    }
+  }
+
+  &-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  &__buy {
+    gap: 8px;
+    flex-shrink: 0;
+    span {
+      color: #fff;
+    }
+    &--loading {
+      background: var(--color-accent-light);
+      cursor: wait;
+    }
+
+    &--in-cart {
+      background: #5a7a5a;
+
+      &:hover,
+      &:focus {
+        background: #5a7a5a;
+      }
+    }
+  }
+
+  &__spinner {
+    animation: spin 0.8s linear infinite;
+
+    circle {
+      stroke-dasharray: 40;
+      stroke-dashoffset: 10;
+    }
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
