@@ -6,6 +6,9 @@
   flex-direction: column;
 
   flex: 1;
+  &.sold {
+    opacity: 0.5;
+  }
 
   &__img {
     height: 159px;
@@ -107,11 +110,11 @@
     }
 
     &--in-cart {
-      background: #5a7a5a;
+      background: var(--color-accent-dark);
 
       &:hover,
       &:focus {
-        background: #5a7a5a;
+        background: var(--color-accent-dark);
       }
     }
   }

@@ -1,5 +1,9 @@
 <template>
-  <div class="product" :aria-label="`Открыть карточку: ${item.title}`" @click="$emit('open')">
+  <div
+    class="product"
+    :aria-label="`Открыть карточку: ${item.title}`"
+    @click="$emit('open')"
+    :class="{ sold: isSold }">
     <div class="product__img product__trigger">
       <img :src="item.image" class="img-absolute" :alt="item.title" loading="lazy" />
     </div>
@@ -84,6 +88,9 @@ export default {
     },
     isDisabled() {
       return this.item.loading || this.item.inCart;
+    },
+    isSold() {
+      return this.item.is_sold;
     },
   },
   methods: {
